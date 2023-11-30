@@ -3,7 +3,8 @@ import { useState, useEffect, useRef } from "react"
 import { GrLanguage } from "react-icons/gr"
 import { FaBars, FaXmark } from "react-icons/fa6"
 
-const NavbarSubmenu = () => {
+const NavbarSubmenu = (props) => {
+    const { type } = props;
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -23,10 +24,10 @@ const NavbarSubmenu = () => {
         setIsMenuOpen(!isMenuOpen);
     }
     const navItems = [
-        { link: "Home", path: "/home" },
-        { link: "News", path: "/home" },
-        { link: "Service", path: "/home" },
-        { link: "Contact", path: "/home" },
+        { link: "Home", path: "/" },
+        { link: "News", path: "/" },
+        { link: "Service", path: "/" },
+        { link: "Contact", path: "/" },
     ]
     return (
         <>
@@ -58,10 +59,14 @@ const NavbarSubmenu = () => {
                                     </ul>
                                 </div>
                             )}
-                        </div>
-
-                        <a href="/login" className="hidden lg:flex items-center hover:text-tertiary"><span>Login</span></a>
-                        <a href="/signup"><button className="bg-primary py-2 px-4 transition-all duration-300 rounded hover:text-primary hover:bg-tertiary text-white">Sign Up</button></a>
+                        </div>   
+                        { type === "Login" ? (
+                            <a href="/signup"><button className="bg-primary py-2 px-4 transition-all duration-300 rounded hover:text-primary hover:bg-tertiary text-white">Sign Up</button></a>
+                        )  : 
+                        
+                        (
+                            <a href="/login" className="hidden lg:flex items-center hover:text-tertiary"><span>Login</span></a>
+                        )}      
                     </div>
 
                     <div className="md:hidden">

@@ -13,7 +13,7 @@ const Service = () => {
                     <h2 className="md:text-5xl text-3xl font-bold text-primary mb-5 leading-normal">
                     We provide services</h2>
                     <p className="text-secondary text-lg mb-7">We will serve you in observation in the area with an unforgettable experience</p>
-                    <button className="btnPrimary">Get Started</button>
+                    <a href="/product" className="btnPrimary">Get Started</a>
                 </div>
             </div>
         </div>

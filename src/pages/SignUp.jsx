@@ -6,7 +6,7 @@ import { fadeIn } from "../variants"
 const SignUp = () => {
     return (
         <div>
-            <NavbarSubmenu />
+            <NavbarSubmenu type="SignUp" />
             <div className="my-24 md:px-14 px-4 max-w-screen-2xl mx-auto" id="service">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                     <motion.div variants={fadeIn("down", 0.2)} initial="hidden" whileInView={"show"} viewport={{ once: false, amount: 0.7 }} className="md:w-1/2">
